@@ -1,0 +1,29 @@
+.topo h1 {
+  text-align: center;
+}
+.peca {
+  width: 50%;
+  margin: auto;
+  background-color: rgb(201, 201, 201);
+  padding: 5px;
+  margin-top: 15px;
+}
+.peca h3 {
+  text-align: center;
+  font-size: 20px;
+}
+.peca ul {
+  list-style: none;
+}
+.lixao {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.lixo {
+  padding: 5px 10px;
+  font-size: 30px;
+  background-color: rgb(232, 232, 232);
+  border: 0;
+  border-radius: 20px;
+  text-decoration: none;
+}
