@@ -1,2 +1,2 @@
-# aplicacao_reusetech
-Aplicação de Gerencialmente de Estoque do projeto ReuseTech
+# reuse_tech_aplicativo
+ Aplicativo de gerenciamento de estoque

@@ -1,0 +1,73 @@
+@media(max-width:900px){
+    main #funcoes{
+        margin: 20px;
+    }
+}
+@media(max-width:700px){
+    main #funcoes h1{
+        font-size: 26px;
+    }
+    main #funcoes p{
+        font-size: 18px;
+    }
+    header h1{
+        font-size: 35px;
+    }
+}
+@media(max-width:600px){
+    header img{
+        max-width: 100px;
+    }
+    header h1{
+        font-size: 32px;
+    }
+    main #funcoes h1{
+        font-size: 24px;
+    }
+}
+@media(max-width:500px){
+    main #funcoes{
+        margin: 15px 10px;
+    }
+    main #funcoes h1{
+        font-size: 22px;
+    }
+    main #funcoes p{
+        font-size: 16px;
+    }
+    header h1{
+        font-size: 30px;
+    }
+    header img{
+        max-width: 90px;
+    }
+}
+@media(max-width:400px){
+    main #funcoes h1{
+        font-size: 20px;
+    }
+    main #funcoes p{
+        font-size: 15px;
+    }
+    header h1{
+        font-size: 28px;
+    }
+    header img{
+        max-width: 80px;
+    }
+}
+@media(max-width:350px){
+    main #funcoes{
+        padding: 5px;
+        margin: 10px 7px;
+    }
+    main #funcoes h1{
+        font-size: 18px;
+    }
+    main #funcoes p{
+        font-size: 12px;
+    }
+    header h1{
+        font-size: 25px;
+    }
+}
