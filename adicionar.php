@@ -41,7 +41,7 @@
                     </a>
                 </div>
                 <div class="peca">
-                    <a href="pecas/placa_de_video.html">
+                    <a href="pecas/placa_de_video.php">
                         <h1>Placa de Vídeo</h1>
                     </a>
                 </div>
