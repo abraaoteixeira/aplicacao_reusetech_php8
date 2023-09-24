@@ -1,30 +1,35 @@
 <?php
-    require_once("conexao.php");
-?>
-<?php
-    session_start();
 
-    if(!isset($_SESSION["login"])){
-        header("location:login.php");
-    }
-    if(isset($_POST["id"])){
-        $peca = $_POST["peca"];
-        $id = $_POST["id"];
-        $deletar = "DELETE FROM {$peca} WHERE id = {$id}";
-        $del = mysqli_query($conecta, $deletar);
-        if(!$del){
+declare(strict_types=1);
+
+require_once("conexao.php");
+
+session_start();
+
+if(!isset($_SESSION["login"])){
+    header("location:login.php");
+    exit();
+}
+
+if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["id"], $_POST["peca"])) {
+    $peca = filter_input(INPUT_POST, 'peca', FILTER_SANITIZE_STRING);
+    $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
+
+    if ($peca && $id) {
+        $stmt = $conecta->prepare("DELETE FROM ? WHERE id = ?");
+        $stmt->bind_param("si", $peca, $id);
+        if (!$stmt->execute()) {
             die("Falha na Consulta ao Banco");
-        } 
+        }
     }
-    $processador = "SELECT * FROM processador ";
-    $placa_mae = "SELECT * FROM placamae";
-#    $login = "SELECT * FROM usuario WHERE user == 'biel'";
-#    $login1 = mysqli_query($conecta, $login);
-    $processador2 = mysqli_query($conecta, $processador);
-    $placa_mae2 = mysqli_query($conecta, $placa_mae);
-    if(!$processador2 || !$placa_mae2){
-        die("Falha na Consulta ao Banco2");
-    }   
+}
+
+$processador2 = $conecta->query("SELECT * FROM processador");
+$placa_mae2 = $conecta->query("SELECT * FROM placa_mae");
+
+if(!$processador2 || !$placa_mae2){
+    die("Falha na Consulta ao Banco2");
+}   
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

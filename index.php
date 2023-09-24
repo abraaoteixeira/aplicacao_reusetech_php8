@@ -1,11 +1,15 @@
 <?php
-    //Iniciando Variavel de sessão
-    session_start();
-    //Mandar de volta para a tela de login caso não tenha passado por ela
-    if(!isset($_SESSION["login"])){
-        header("location:login.php");
-    }
-?> 
+
+declare(strict_types=1);
+
+session_start();
+
+if(!isset($_SESSION["login"])){
+    header("location:login.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

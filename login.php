@@ -1,29 +1,34 @@
 <?php
-    require_once("conexao.php");
-?>
-<?php
-    // Adicionar Variável de Sessão
-    session_start();
 
-    if(isset($_POST["login"])){
-        $usuario = $_POST["login"];
-        $senha   = $_POST["senha"]; 
+declare(strict_types=1);
 
-        $login = "SELECT * FROM usuario WHERE `login` = '{$usuario}' AND senha = '{$senha}'";
-        $acesso = mysqli_query($conecta, $login);
-        if(!$acesso){
+require_once("conexao.php");
+
+session_start();
+
+if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST["login"], $_POST["senha"])) {
+    $usuario = filter_input(INPUT_POST, 'login', FILTER_SANITIZE_STRING);
+    $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_STRING);
+
+    if ($usuario && $senha) {
+        $stmt = $conecta->prepare("SELECT * FROM usuario WHERE `login` = ? AND senha = ?");
+        $stmt->bind_param("ss", $usuario, $senha);
+        if (!$stmt->execute()) {
             die("Falha na Consulta ao Banco");
-        }        
-        $informacao = mysqli_fetch_assoc($acesso);
-        if( empty($informacao)){
+        }
+        
+        $informacao = $stmt->get_result()->fetch_assoc();
+        if(empty($informacao)){
             $mensagem = "Login Sem Sucesso, Tente Novamente";
         } else {
             $_SESSION["login"] = $informacao["login"];
             header("Location: index.php");
-            exit;
+            exit();
         }
     }
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
