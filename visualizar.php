@@ -4,7 +4,7 @@
 <?php
     session_start();
 
-    if(!isset($_SESSION["user"])){
+    if(!isset($_SESSION["login"])){
         header("location:login.php");
     }
     if(isset($_POST["id"])){
@@ -18,15 +18,13 @@
     }
     $processador = "SELECT * FROM processador ";
     $placa_mae = "SELECT * FROM placamae";
-    $login = "SELECT * FROM usuario WHERE user == 'biel'";
-    $login1 = mysqli_query($conecta, $login);
+#    $login = "SELECT * FROM usuario WHERE user == 'biel'";
+#    $login1 = mysqli_query($conecta, $login);
     $processador2 = mysqli_query($conecta, $processador);
     $placa_mae2 = mysqli_query($conecta, $placa_mae);
     if(!$processador2 || !$placa_mae2){
         die("Falha na Consulta ao Banco2");
-    } 
-    
-
+    }   
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

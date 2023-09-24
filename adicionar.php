@@ -3,7 +3,7 @@
     //Iniciando Variavel de sessão
     session_start();
     //Mandar de volta para a tela de login caso não tenha passado por ela
-    if(!isset($_SESSION["user"])){
+    if(!isset($_SESSION["login"])){
         header("location:login.php");
     }
 ?> 
