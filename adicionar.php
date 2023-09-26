@@ -67,6 +67,22 @@ if (!isset($_SESSION["login"])) {
             color: #00ff00;
             margin-top: auto;
         }
+        
+        .sair {
+        text-align: center;
+        }
+
+        .sair input[type="button"] {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+        }
 
         #funcoes a {
             background-color: transparent;
@@ -126,6 +142,9 @@ if (!isset($_SESSION["login"])) {
                 <a href="pecas/adicionar_peca.php?table=usuario">
                     <h1>Usuario</h1>
                 </a>
+            </div>
+            <div class="sair">
+            <a href="sair.php"><input type="button" value="Sair"></a>
             </div>
         </div>
     </main>

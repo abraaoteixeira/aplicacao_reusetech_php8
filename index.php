@@ -66,6 +66,23 @@ if(!isset($_SESSION["login"])){
             color: #00ff00;
             margin-top: auto; /* Mantém o rodapé na parte inferior */
         }
+
+        .sair {
+        text-align: center;
+        }
+
+        .sair input[type="button"] {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+        }
+
         #funcoes a {
             background-color: transparent;
             color: #000;
@@ -105,6 +122,9 @@ if(!isset($_SESSION["login"])){
                     <h1>Adicionar Peça ao Estoque</h1>
                     <p>Clique aqui para adicionar peças ao nosso estoque</p>
                 </a>
+            </div>
+            <div class="sair">
+            <a href="sair.php"><input type="button" value="Sair"></a>
             </div>
         </div>
     </main>
