@@ -15,14 +15,8 @@ if(!isset($_SESSION["login"])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aplicativo ReuseTech</title>
-    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/responsive.css">
-
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
-
     <style>
         body {
             background-color: #ffffff;
@@ -55,39 +49,41 @@ if(!isset($_SESSION["login"])){
         }
 
         .conteudo {
-            max-width: 800px;
+            max-width: 500px;
             margin: 0 auto;
             padding: 20px;
             background-color: #fff;
-            border-radius: 10px;
+            border-radius: 20px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .rodape {
             background-color: #000000;
-            padding: 10px;
+            height: 50px;
+            padding: 0 10px;
             border-radius: 0 0 10px 10px;
             text-align: center;
             color: #00ff00;
             margin-top: auto; /* Mantém o rodapé na parte inferior */
         }
-
-        /* Botões */
         #funcoes a {
-            background-color: transparent; /* Sem cor de fundo */
-            color: #000; /* Texto preto */
-            padding: 8px 16px; /* Reduzi o padding para torná-los um pouco menores */
+            background-color: transparent;
+            color: #000;
+            padding: 8px 16px;
             border-radius: 5px;
             text-decoration: none;
-            display: inline-block;
-            margin: 10px 5px; /* Adaptei a margem para manter a distância entre os botões */
+            display: block; /* Alterado de inline-block para block */
+            margin: 10px auto; /* Centralizar os botões */
             font-size: 16px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             transition: background-color 0.3s ease;
+            text-align: center;
+            width: 400px; /* Largura fixa para todos os botões */
         }
 
+
         #funcoes a:hover {
-            background-color: bl;
+            background-color: gray;
         }
 
     </style>
@@ -113,30 +109,7 @@ if(!isset($_SESSION["login"])){
         </div>
     </main>
     <div class="rodape">
-        &copy; 2023 ReuseTech. Todos os direitos reservados.
+        &copy; ReuseTech 2021-2023. Todos os direitos reservados.
     </div>
-    <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyAW8Nu8CnS0rQyjH1r42r2wQYKW4Qr4eE4",
-    authDomain: "reusetech-oficial.firebaseapp.com",
-    projectId: "reusetech-oficial",
-    storageBucket: "reusetech-oficial.appspot.com",
-    messagingSenderId: "227940630480",
-    appId: "1:227940630480:web:8b34435375efbccfea03d5",
-    measurementId: "G-D1VGWLW5S4"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
 </body>
 </html>
